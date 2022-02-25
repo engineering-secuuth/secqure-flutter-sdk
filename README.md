@@ -15,8 +15,8 @@ SecQure Passwordless Library For Validate Auth Token - Email Magiclink, SMS OTP
 
 ## Features
 
-Passwordless Login and Custom Branding
-Make users login smooth and secure with emailed magic links.
+#Passwordless Login and Custom Branding
+#Make users login smooth and secure with emailed magic links.
 
 ## Getting started
 
