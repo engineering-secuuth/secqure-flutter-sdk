@@ -34,10 +34,35 @@ class _SecuuthAuthState extends State<SecuuthAuth> {
           javascriptChannels: {
             JavascriptChannel(
                 name: 'JavascriptChannel',
-                onMessageReceived: (message) async {
-                  print('Javascript: "${message.message}" ');
-                  await storage.write(key: 'token', value: message.message);
-                  String? value = await storage.read(key: 'token');
+                onMessageReceived: (payload) async {
+                  // print('Javascript: "${payload.message}" ');
+
+                  await storage.write(key: 'SecqureRefreshToken', value: payload.message);
+                  await storage.write(key: 'SecqureUserPubKey', value: payload.message);
+                  await storage.write(key: 'SecqureUserId', value: payload.message);
+
+                  String? refreshToken = await storage.read(key: 'SecqureRefreshToken');
+                  String? pubKey = await storage.read(key: 'SecqureUserPubKey');
+                  String? userId = await storage.read(key: 'SecqureUserId');
+
+                  if (refreshToken != null && pubKey != null && userId != null) {
+                    try{
+                      final uri = Uri.parse('https://api.secuuth.io/auth/renewTokens');
+                      Map<String, String> headers = {"Accept": 'application/json', "Content-type": "application/json", "keyId": widget.keyId};
+                      Map<dynamic, dynamic> JsonBody = {
+                        "refreshToken": refreshToken,
+                        "publicKey": pubKey,
+                        "userSubId": userId,
+                        "renewRefreshToken": false,
+                      };
+
+                      http.Response tokens = await http.post(uri, headers: headers, body: JsonBody);
+                      String res = tokens.toString();
+                    }
+                    catch (e) {
+                      throw Exception(e);
+                    }
+                  }
                 }
             )
           },
@@ -45,3 +70,15 @@ class _SecuuthAuthState extends State<SecuuthAuth> {
       )
   );
 }
+
+
+
+//           javascriptChannels: {
+//             JavascriptChannel(
+//                 name: 'JavascriptChannel',
+//                 onMessageReceived: (message) async {
+//                   print('Javascript: "${message.message}" ');
+//                   await storage.write(key: 'token', value: message.message);
+//                   String? value = await storage.read(key: 'token');
+//                 }
+//             )
