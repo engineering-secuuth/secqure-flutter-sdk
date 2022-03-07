@@ -61,8 +61,8 @@ class FirstRoute extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              // MaterialPageRoute(builder: (context) => const SecondRoute()),
-                MaterialPageRoute(builder: (context) => const SecqureAuth(keyId: 'a72ae37a-b3ea-4e39-a783-e862ba774eee', secretId: '2oUswmK2NsdaQj9Q')),
+              //Replace placeholders with your API key and Secret key from dashboard
+                MaterialPageRoute(builder: (context) => const SecqureAuth(keyId: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX', secretId: 'XXXXXXXXXX')),
             );
           },
         ),
@@ -71,22 +71,5 @@ class FirstRoute extends StatelessWidget {
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: const Text('Login Page'),
-          backgroundColor: Colors.pink
-      ),
-      body: Container(
-          //Replace placeholders with your API key and Secret key from dashboard
-          child: const SecqureAuth(keyId: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX', secretId: 'XXXXXXXXXX')
-      ),
-    );
-  }
-}
 ```
 
