@@ -89,28 +89,6 @@ class _SecqureAuthState extends State<SecqureAuth> {
                     }
                   }
                 }
-
-                // onMessageReceived: (message) async {
-                //   print('Javascript: "${message.message}" ');
-                //   // secureStorage.writeSecureData('token', message.toString());
-                //   await storage.write(key: 'token', value: message.message);
-                //   // String? value = await storage.read(key: 'token');
-                //   // await showDialog(
-                //   //     context: context,
-                //   //     builder: (context) => AlertDialog(
-                //   //       content: Text(
-                //   //         value.toString(),
-                //   //         style: TextStyle(fontSize: 16),
-                //   //       ),
-                //   //       actions: [
-                //   //         TextButton(
-                //   //           child: Text('OK'),
-                //   //           onPressed: () => Navigator.pop(context),
-                //   //         )
-                //   //       ],
-                //   //     )
-                //   // );
-                // }
             ),
           },
           gestureNavigationEnabled: true,
