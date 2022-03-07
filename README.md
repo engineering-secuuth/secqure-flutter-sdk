@@ -29,6 +29,7 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder. 
 
 ```dart
-const like = 'sample';
+//Replace placeholders with your API key and Secret key from dashboard
+const SecqureAuth(keyId: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX', secretId: 'XXXXXXXXXX')
 ```
 
