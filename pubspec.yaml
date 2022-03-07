@@ -1,0 +1,25 @@
+name: secqure_flutter_sdk
+description: SecQure Passwordless Library For Validate Auth Token - Email Magiclink, SMS OTP
+version: 0.0.1
+homepage: https://www.secqure.io/
+repository: https://github.com/engineering-secuuth/secqure-flutter-sdk
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  webview_flutter: ^3.0.0
+  flutter_secure_storage: ^5.0.2
+  http: ^0.13.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+
+
